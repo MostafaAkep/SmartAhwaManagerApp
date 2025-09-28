@@ -1,75 +1,59 @@
-# ☕ Ahwa Order Management System
+# ☕ Smart Ahwa Manager
 
-A Dart-based command-line application for managing beverage orders in a café setting. This system allows tracking customer orders, managing order status, and generating sales reports.
+A **Flutter-based mobile app** designed for café management in Egypt 🇪🇬.  
+It helps waiters, cashiers, and admins organize orders, manage menus, and track sales efficiently.
 
-## 🏗️ Architecture
+---
 
-The application follows a clean architecture pattern with clear separation of concerns:
+## 🚀 Features
 
-```
+- 📱 Cross-platform (Android & iOS)
+- 🧾 Digital menu browsing
+- 🛒 Add and manage customer orders
+- 💰 Track sales and revenues
+- 👨‍💼 Admin panel for menu and price updates
+- 🎨 Modern, responsive UI with Flutter
+
+---
+
+## 🏗️ Tech Stack
+
+- **Framework:** Flutter  
+- **State Management:** BLoC  
+- **Backend (optional):** Firebase / Supabase  
+- **Database:** Hive / SQLite (local)
+
+---
+
+## 📂 Project Structure
+
+```bash
 lib/
-├── models/            
-│   ├── order_model.dart  
-│   └── drink_model.dart  
-├── services/          
-│   └── order_service.dart  
-└── repo/              
-    └── order_repo.dart   
+├── features/
+│   ├── orders/
+│   ├── menu/
+│   ├── auth/
+│   └── admin/
+├── core/
+│   ├── theme/
+│   └── utils/
+└── main.dart
 ```
 
-## ✨ Features
 
-- **Order Management**
-  - Create new orders with multiple beverages
-  - Update existing orders
-  - Mark orders as completed
-  - View all active orders
+---
 
-- **Beverage Types**
-  - Turkish Coffee
-  - Tea (Shai)
-  - Hibiscus Tea
+## ⚡ Getting Started
 
-- **Reporting**
-  - Generate sales reports
-  - Track completed orders
-  - Identify top-selling beverages
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/smart-ahwa-manager.git
 
-## 🚀 Getting Started
+# Move into the project
+cd smart-ahwa-manager
 
-1. Ensure you have Dart SDK installed on your system
-2. Clone this repository
-3. Run the application:
-   ```bash
-   dart run lib/main.dart
-   ```
+# Install dependencies
+flutter pub get
 
-## 📊 Example Usage
-
-```dart
-// Create an order service instance
-final orderService = OrderService();
-
-// Create a new order
-final order = OrderModel(
-  drinks: [TurkishCoffee(), Tea()],
-  customerName: "Omar",
-  instructions: "No sugar",
-);
-
-// Add the order
-orderService.addOrder(order);
-
-// Mark order as completed when served
-orderService.markOrderCompleted(order);
-
-// Generate a sales report
-orderService.generateReport();
-```
-
-## 📝 Project Structure
-
-- `lib/models/`: Contains data models for orders and beverages
-- `lib/services/`: Contains business logic and services
-- `lib/repo/`: Defines the repository interface for data access
-- `test/`: Contains unit tests (to be implemented)
+# Run the app
+flutter run
